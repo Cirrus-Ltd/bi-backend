@@ -1,7 +1,7 @@
 {
-  "name": "iput-kernel",
+  "name": "bi-backend",
   "version": "1.0.0",
-  "description": "IPUTでの大学生活を支援するためのアプリケーションシステム",
+  "description": "Backend for cirrus bi",
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js"
