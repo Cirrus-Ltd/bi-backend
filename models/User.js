@@ -23,7 +23,7 @@ const UserSchema = new mongoose.Schema({
         required: true,
         trim: true,
         lowercase: true,
-        match: [/^[a-zA-Z0-9_.+-]+@tks.iput.ac.jp/, 'ドメインはtks.iput.ac.jpである必要があります'],
+        match: [/^[a-zA-Z0-9_.+-]+@f-cirrus.co.jp/, 'ドメインはf-cirrus.co.jpである必要があります'],
         max: 319
     },
     password: {

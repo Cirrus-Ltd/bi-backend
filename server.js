@@ -5,13 +5,13 @@ const cors = require("cors");
 const userRoute = require("./routes/users");
 const authRoute = require("./routes/auth");
 
-const PORT = 4000;
+const PORT = 4010;
 const mongoose = require("mongoose");
 require("dotenv").config();
 
 //データベース接続
 mongoose
-    .connect(process.env.MONGOURL)
+    .connect(process.env.MONGOURI)
     .then(() =>{
     console.log("DB接続中");
     }).catch((err) => {

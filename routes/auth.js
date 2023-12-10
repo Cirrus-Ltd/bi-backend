@@ -88,8 +88,7 @@ async function sendConfirmationEmail(email, token) {
         }
     });
 
-    // リンクをクエリパラメータ形式に変更
-    const link = `https://www.iput-kernel.com/api/auth/confirm-email?token=${token}`;
+    const link = `https://ap.f-cirrus.co.jp/v1/auth/confirm-email?token=${token}`;
 
     const mailOptions = {
         from: "iput-kernel@gmail.com",
