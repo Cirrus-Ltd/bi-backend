@@ -18,7 +18,7 @@ router.post('/register', async (req, res) => {
         const newUser = new User({
             username: req.body.username,
             email: req.body.email,
-            password: hashedPassword,  // ハッシュ化されたパスワードを保存
+            password: hashedPassword,
             confirmationToken: token,
             isVerified: false
         });
@@ -83,7 +83,7 @@ async function sendConfirmationEmail(email, token) {
     const transporter = nodemailer.createTransport({
         service: "Gmail", 
         auth: {
-            user: "iput.kernel@gmail.com",
+            user: "broadcast@f-cirrus.co.jp",
             pass: process.env.MAILPASS
         }
     });
@@ -91,10 +91,10 @@ async function sendConfirmationEmail(email, token) {
     const link = `https://ap.f-cirrus.co.jp/v1/auth/confirm-email?token=${token}`;
 
     const mailOptions = {
-        from: "iput-kernel@gmail.com",
+        from: "cirrus-broadcast@f-cirrus.co.jp",
         to: email,
-        subject: "アカウント登録",
-        text: "このリンクをクリックすれば有効化されるよ: " + link
+        subject: "メールアドレスの確認",
+        text: "次のリンクをクリックして、アカウントを認証してください。: " + link
     };
 
     await transporter.sendMail(mailOptions);
